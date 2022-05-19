@@ -23,8 +23,7 @@ with open("objetos.pkl", "rb") as arquivo:
   ss, dtc = pickle.load(arquivo)
 
   estrutura = {'radius': radius, 'texture': texture, 'perimeter': perimeter, 'area': area, 'smoothness': smoothness,
-                   'compactness': compactness, 'concavity': concavity, 'concave': concave, 'symmetry': symmetry,
-                   'fractal': fractal}
+                   'compactness': compactness, 'concavity': concavity, 'concave': concave, 'symmetry': symmetry, 'fractal': fractal}
   df = pd.DataFrame(estrutura, index=[0])
   
   st.write("### Parâmetros de Entrada")
@@ -35,8 +34,7 @@ with open("objetos.pkl", "rb") as arquivo:
   
   predicao = dtc.predict(df)
   st.write(f"A classe é: **{predicao[0]}**")
-  #st.write("**A classe dessa flor é:**")
-  #st.write(predicao)
+  
   predicao = dtc.predict_proba(df)
   predicao = pd.DataFrame(predicao)
   predicao.rename({
