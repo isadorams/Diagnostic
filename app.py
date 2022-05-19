@@ -24,7 +24,7 @@ with open("objetos.pkl", "rb") as arquivo:
 
   estrutura = {'radius': radius, 'texture': texture, 'perimeter': perimeter, 'area': area, 'smoothness': smoothness,
                    'compactness': compactness, 'concavity': concavity, 'concave': concave, 'symmetry': symmetry,
-                   'fractal': fractal }
+                   'fractal': fractal}
   df = pd.DataFrame(estrutura, index=[0])
   
   st.write("### Parâmetros de Entrada")
