@@ -17,7 +17,7 @@ st.sidebar.slider("Concavity", 0.0, 1.30, 0.27, 0.1)
 with open("objetos.pkl", "rb") as arquivo:
   ss, dtc = pickle.load(arquivo)
 
-  estrutura = {'perimeter': perimeter, 'area': area, 'compactness': compactness, 'concavity': concavity}
+  estrutura = {'', 'perimeter': perimeter, 'area': area, 'compactness': compactness, 'concavity': concavity}
   df = pd.DataFrame(estrutura, index=[0])
   
   st.write("### Parâmetros de Entrada")
