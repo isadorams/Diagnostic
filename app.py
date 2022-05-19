@@ -8,21 +8,16 @@ st.write("# Classificação de Cancer")
 st.write("## Breast Cancer Wisconsin (Diagnostic)")
 
 st.sidebar.write("### Parâmetros")
-st.sidebar.slider("Texture", 11.0, 50.0, 26.0, 0.1)
 st.sidebar.slider("Perimeter", 49.0, 251.0, 107.0, 0.1)
 st.sidebar.slider("Area", 184.0, 4254.0, 881.0, 0.1)
-st.sidebar.slider("Smoothness", 0.06, 0.22, 0.14, 0.1)
 st.sidebar.slider("Compactness", 0.01, 1.6, 0.25, 0.1)
 st.sidebar.slider("Concavity", 0.0, 1.30, 0.27, 0.1)
-st.sidebar.slider("Concave", 0.0, 0.30, 0.11, 0.1)
-st.sidebar.slider("Symmetry", 0.14, 0.66, 0.30, 0.1)
-st.sidebar.slider("Fractal", 0.054, 0.20, 0.08, 0.1)
+
 
 with open("objetos.pkl", "rb") as arquivo:
   ss, dtc = pickle.load(arquivo)
 
-  estrutura = {'texture': texture, 'perimeter': perimeter, 'area': area, 'smoothness': smoothness,
-                   'compactness': compactness, 'concavity': concavity, 'concave': concave, 'symmetry': symmetry, 'fractal': fractal}
+  estrutura = {'perimeter': perimeter, 'area': area, 'compactness': compactness, 'concavity': concavity}
   df = pd.DataFrame(estrutura, index=[0])
   
   st.write("### Parâmetros de Entrada")
